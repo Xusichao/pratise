@@ -2,11 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
-    <com.xsic.personalpratise.ui.WaveView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        />
+    android:gravity="center"
+    android:background="#ff3">
+<!--    <com.xsic.personalpratise.ui.WaveView-->
+<!--        android:layout_width="300dp"-->
+<!--        android:layout_height="300dp" />-->
 <!--    <com.xsic.personalpratise.ui.FlowLayout-->
 <!--        android:layout_width="300dp"-->
 <!--        android:layout_height="wrap_content"-->
