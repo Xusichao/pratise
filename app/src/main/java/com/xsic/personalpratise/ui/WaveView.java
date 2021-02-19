@@ -42,6 +42,7 @@ public class WaveView extends View {
 
     private void init(){
         mPaint.setAntiAlias(true);
+        mPaint.setColor(Color.parseColor("#ff3b30"));
     }
 
     @Override
@@ -74,15 +75,23 @@ public class WaveView extends View {
         setMeasuredDimension(finalWidth,finalHeight);
     }
 
-
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        int progress = 50;
-        for (int i=0;mWaveWidth>getWidth();i++){
-
+        float progress = 0.5f;
+        while (mWaveWidth<getWidth()){
+            mBazierPath_1.moveTo(getLeft()+mWaveWidth,getBottom()+WAVE_HEIGHT - progress*getHeight());
+            mWaveWidth += WAVE_WIDTH/2f;
+            mBazierPath_1.quadTo(getLeft()+mWaveWidth,getBottom() - progress*getHeight(),
+                    getLeft()+mWaveWidth+WAVE_WIDTH/2f,getBottom()+WAVE_HEIGHT - progress*getHeight());
+            mWaveWidth += WAVE_WIDTH/2f;
+            mBazierPath_1.moveTo(getLeft()+mWaveWidth,getBottom()+WAVE_HEIGHT - progress*getHeight());
+            mWaveWidth += WAVE_WIDTH/2f;
+            mBazierPath_1.quadTo(getLeft()+mWaveWidth,getBottom()+WAVE_HEIGHT*2 - progress*getHeight(),
+                    getLeft()+mWaveWidth+WAVE_WIDTH/2f,getBottom()+WAVE_HEIGHT - progress*getHeight());
         }
-
+        canvas.drawPath(mBazierPath_1,mPaint);
+        canvas.drawColor(Color.parseColor("#ff3b30"));
     }
 
 
