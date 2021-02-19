@@ -74,12 +74,15 @@ public class WaveView extends View {
         setMeasuredDimension(finalWidth,finalHeight);
     }
 
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-//        for (int i=0;mWaveWidth>)
-//        mBazierPath_1.moveTo(getLeft(),getBottom()+2*WAVE_HEIGHT);
-//        mBazierPath_1.quadTo(WAVE_WIDTH/2*);
+        int progress = 50;
+        for (int i=0;mWaveWidth>getWidth();i++){
+
+        }
+
     }
 
 
